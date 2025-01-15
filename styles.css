@@ -6,24 +6,6 @@ body {
   background-color: #f9f9f9;
 }
 
-/* NAV Start */
-.nav {
-  background-color: blue;
-  height: 200px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.nav input {
-  width: 1000px;
-  height: 50px;
-  border-radius: 100px;
-  border: none;
-  padding: 10px 20px;
-}
-/* NAV End */
-
 .container {
   max-width: 1200px;
   margin: 20px auto;

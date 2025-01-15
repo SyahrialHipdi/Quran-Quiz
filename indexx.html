@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Surah List with Popup</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Sorting Section -->
+    <div class="sort-section">
+      <span>Sortir Dengan: <b>MENAIK</b></span>
+    </div>
+
+    <!-- Surah Cards -->
+    <div class="card-grid">
+      <div class="card" onclick="openPopup('Al-Fatihah')">
+        <div class="card-left">
+          <div class="number-container">
+            <div class="number">1</div>
+          </div>
+        </div>
+        <div class="card-middle">
+          <h2 class="title">Al-Fatihah</h2>
+          <p class="subtitle">Pembuka</p>
+        </div>
+        <div class="card-right">
+          <p class="arabic">الفاتحة</p>
+          <p class="ayah-count">7 Ayat</p>
+        </div>
+      </div>
+
+      <div class="card" onclick="openPopup('Al-Baqarah')">
+        <div class="card-left">
+          <div class="number-container">
+            <div class="number">2</div>
+          </div>
+        </div>
+        <div class="card-middle">
+          <h2 class="title">Al-Baqarah</h2>
+          <p class="subtitle">Sapi</p>
+        </div>
+        <div class="card-right">
+          <p class="arabic">البقرة</p>
+          <p class="ayah-count">286 Ayat</p>
+        </div>
+      </div>
+      
+      <div class="card" onclick="openPopup('Al-Baqarah')">
+        <div class="card-left">
+          <div class="number-container">
+            <div class="number">2</div>
+          </div>
+        </div>
+        <div class="card-middle">
+          <h2 class="title">Al-Baqarah</h2>
+          <p class="subtitle">Sapi</p>
+        </div>
+        <div class="card-right">
+          <p class="arabic">البقرة</p>
+          <p class="ayah-count">286 Ayat</p>
+        </div>
+      </div>
+
+      <div class="card" onclick="openPopup('Al-Baqarah')">
+        <div class="card-left">
+          <div class="number-container">
+            <div class="number">2</div>
+          </div>
+        </div>
+        <div class="card-middle">
+          <h2 class="title">Al-Baqarah</h2>
+          <p class="subtitle">Sapi</p>
+        </div>
+        <div class="card-right">
+          <p class="arabic">البقرة</p>
+          <p class="ayah-count">286 Ayat</p>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+  <!-- Popup -->
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <span class="close-btn" onclick="closePopup()">&times;</span>
+      <h2 id="popup-title"></h2>
+      <p id="popup-subtitle"></p>
+      <input type="number" name="" id="">
+      -
+      <input type="number" name="" id="">
+      <p></p>
+      <button type="submit">OK</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
