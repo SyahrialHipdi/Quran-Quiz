@@ -1,144 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style/reset.css">
-    <link rel="stylesheet" href="style/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Surah List with Popup</title>
+  <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
 <nav class="nav">
     <input type="text" placeholder="Cari Surah yang akan dihapal">
 </nav>
 
-<main class="main">
-    <div class="card-   grid">
-        
-        <div class="card">
-            <div class="card-left">
-                <div class="number-container">
-                    <div class="number">1</div>
-                </div>
-            </div>
-            <div class="card-middle">
-                <h2 class="title">Al-Fatihah</h2>
-                <p class="subtitle">Pembuka</p>
-            </div>
-            <div class="card-right">
-                <p class="arabic">الفاتحة</p>
-                <p class="ayah-count">7 Ayat</p>
-            </div>
-        </div>
 
-        <div class="card">
-            <div class="card-left">
-                <div class="number-container">
-                    <div class="number">1</div>
-                </div>
-            </div>
-            <div class="card-middle">
-                <h2 class="title">Al-Fatihah</h2>
-                <p class="subtitle">Pembuka</p>
-            </div>
-            <div class="card-right">
-                <p class="arabic">الفاتحة</p>
-                <p class="ayah-count">7 Ayat</p>
-            </div>
-        </div>
 
-        <div class="card">
-            <div class="card-left">
-                <div class="number-container">
-                    <div class="number">1</div>
-                </div>
-            </div>
-            <div class="card-middle">
-                <h2 class="title">Al-Fatihah</h2>
-                <p class="subtitle">Pembuka</p>
-            </div>
-            <div class="card-right">
-                <p class="arabic">الفاتحة</p>
-                <p class="ayah-count">7 Ayat</p>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-left">
-                <div class="number-container">
-                    <div class="number">1</div>
-                </div>
-            </div>
-            <div class="card-middle">
-                <h2 class="title">Al-Fatihah</h2>
-                <p class="subtitle">Pembuka</p>
-            </div>
-            <div class="card-right">
-                <p class="arabic">الفاتحة</p>
-                <p class="ayah-count">7 Ayat</p>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-left">
-                <div class="number-container">
-                    <div class="number">1</div>
-                </div>
-            </div>
-            <div class="card-middle">
-                <h2 class="title">Al-Fatihah</h2>
-                <p class="subtitle">Pembuka</p>
-            </div>
-            <div class="card-right">
-                <p class="arabic">الفاتحة</p>
-                <p class="ayah-count">7 Ayat</p>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-left">
-                <div class="number-container">
-                    <div class="number">1</div>
-                </div>
-            </div>
-            <div class="card-middle">
-                <h2 class="title">Al-Fatihah</h2>
-                <p class="subtitle">Pembuka</p>
-            </div>
-            <div class="card-right">
-                <p class="arabic">الفاتحة</p>
-                <p class="ayah-count">7 Ayat</p>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-left">
-                <div class="number-container">
-                    <div class="number">1</div>
-                </div>
-            </div>
-            <div class="card-middle">
-                <h2 class="title">Al-Fatihah</h2>
-                <p class="subtitle">Pembuka</p>
-            </div>
-            <div class="card-right">
-                <p class="arabic">الفاتحة</p>
-                <p class="ayah-count">7 Ayat</p>
-            </div>
-        </div>
+  <div class="container">
+    <!-- Sorting Section -->
 
-    </div>
-
-    <div id="popup" class="popup">
-        <div class="popup-content">
-          <span class="close-btn" onclick="closePopup()">&times;</span>
-          <h2 id="popup-title"></h2>
-          <p id="popup-subtitle"></p>
-          <p id="popup-arabic"></p>
-          <p id="popup-ayah-count"></p>
+    <!-- Surah Cards -->
+    <div class="card-grid">
+      <div class="card" onclick="openPopup('Al-Fatihah')">
+        <div class="card-left">
+          <div class="number-container">
+            <div class="number">1</div>
+          </div>
+        </div>
+        <div class="card-middle">
+          <h2 class="title">Al-Fatihah</h2>
+          <p class="subtitle">Pembuka</p>
+        </div>
+        <div class="card-right">
+          <p class="arabic">الفاتحة</p>
+          <p class="ayah-count">7 Ayat</p>
         </div>
       </div>
-    
 
-</main>
+      <div class="card" onclick="openPopup('Al-Baqarah')">
+        <div class="card-left">
+          <div class="number-container">
+            <div class="number">2</div>
+          </div>
+        </div>
+        <div class="card-middle">
+          <h2 class="title">Al-Baqarah</h2>
+          <p class="subtitle">Sapi</p>
+        </div>
+        <div class="card-right">
+          <p class="arabic">البقرة</p>
+          <p class="ayah-count">286 Ayat</p>
+        </div>
+      </div>
+      
+      <div class="card" onclick="openPopup('Al-Baqarah')">
+        <div class="card-left">
+          <div class="number-container">
+            <div class="number">2</div>
+          </div>
+        </div>
+        <div class="card-middle">
+          <h2 class="title">Al-Baqarah</h2>
+          <p class="subtitle">Sapi</p>
+        </div>
+        <div class="card-right">
+          <p class="arabic">البقرة</p>
+          <p class="ayah-count">286 Ayat</p>
+        </div>
+      </div>
+
+      <div class="card" onclick="openPopup('Al-Baqarah')">
+        <div class="card-left">
+          <div class="number-container">
+            <div class="number">2</div>
+          </div>
+        </div>
+        <div class="card-middle">
+          <h2 class="title">Al-Baqarah</h2>
+          <p class="subtitle">Sapi</p>
+        </div>
+        <div class="card-right">
+          <p class="arabic">البقرة</p>
+          <p class="ayah-count">286 Ayat</p>
+        </div>
+      </div>
 
 
-<script src="script/script.js"></script>
+    </div>
+  </div>
+
+  <!-- Popup, akan menuju quiz.html jika diklik OK-->
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <span class="close-btn" onclick="closePopup()">&times;</span>
+      <h2 id="popup-title"></h2>
+      <p id="popup-subtitle"></p>
+      <input type="number" name="" id="">
+      -
+      <input type="number" name="" id="">
+      <p></p>
+      <button type="submit">OK</button>
+    </div>
+  </div>
+
+  <script src="script/script.js"></script>
 </body>
 </html>
