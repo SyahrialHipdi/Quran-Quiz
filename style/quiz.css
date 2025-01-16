@@ -8,8 +8,9 @@ body {
 }
 
 .container {
+    display: none;
     width: 500px;
-    height: 500px;
+    /* height: 500px; */
     background-color: blue;
     position: relative;
     top: 50%;
@@ -24,12 +25,16 @@ body {
 .container p{
     text-align: right;
     padding: 10px 5px;
-    border: 1px solid black;
+    border: 1px solid rgba(0, 0, 0, 0.5);
     cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    line-height: 1.5;
 }
 
 .benar {
-    background-color: green;
+    background-color: #16cab2;
+    color: white;
 }
 
 button {
@@ -38,6 +43,15 @@ button {
 
 .hidden {
     height: 200px;
-    display: none;
+    display: block;
+}
+
+.hidden * {
+    margin: 10px;
+}
+
+.hidden h3 {
+    font-size: 36px;
+    margin-top: 15px;
 }
 

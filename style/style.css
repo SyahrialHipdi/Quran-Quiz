@@ -4,21 +4,22 @@ body {
   margin: 0;
   padding: 0;
   background-color: #f9f9f9;
+  font-size: 14px;
 }
 
 /* NAV Start */
 .nav {
-  background-color: blue;
-  height: 200px;
+  background-color: #16cab2;
+  height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .nav input {
-  width: 1000px;
-  height: 50px;
-  border-radius: 100px;
+  width: 750px;
+  height: 25px;
+  border-radius: 5px;
   border: none;
   padding: 10px 20px;
 }
@@ -133,9 +134,11 @@ body {
   display: none;
   justify-content: center;
   align-items: center;
+  z-index: 2;
 }
 
 .popup-content {
+  z-index: 2;
   position: relative;
   background-color: #fff;
   padding: 20px;
@@ -143,6 +146,10 @@ body {
   width: 400px;
   text-align: center;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.popup-content * {
+  margin: 10px;
 }
 
 .popup-content h2 {
@@ -169,5 +176,35 @@ input[type="number"]{
 }
 
 button[type="submit"]{
-  padding: 5px 10px;
+  border-radius: 10px;
+  background-color: #16cab2;
+  padding: 15px 30px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+footer {
+  border-top: 1px solid #16cab2;
+  display: flex;
+  padding: 25px 50px ;
+  position: relative;
+  /* bottom: 0; */
+  background-color: white;
+  /* height: 50px; */
+  right: 0;
+  left: 0;
+  gap: 50px;
+  margin-top: 25px;
+  box-shadow: 0 -3px 15px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+footer .kiri {
+  flex: 1;
+}
+
+footer .kanan {
+  flex: 1;
 }
