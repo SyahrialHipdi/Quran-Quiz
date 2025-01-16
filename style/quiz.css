@@ -8,7 +8,7 @@ body {
 }
 
 .container {
-    display: none;
+    display: block;
     width: 500px;
     /* height: 500px; */
     background-color: blue;
@@ -43,7 +43,7 @@ button {
 
 .hidden {
     height: 200px;
-    display: block;
+    display: none;
 }
 
 .hidden * {
