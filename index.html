@@ -8,96 +8,111 @@
 </head>
 <body>
 <nav class="nav">
-    <input type="text" placeholder="Cari Surah yang akan dihapal">
+    <input type="text" placeholder="Cari Surah yang akan dihapal" id="search-input">
 </nav>
 
 <div class="container">
     <!-- Sorting Section -->
 
     <!-- Surah Cards -->
-    <div class="card-grid">
-        <div class="card" onclick="openPopup('Al-Fatihah')">
+    <div class="card-grid" id="card-surah">
+        <!--        -->
+        <div class="card">
             <div class="card-left">
                 <div class="number-container">
-                    <div class="number">1</div>
+                    <div class="number">-</div>
                 </div>
             </div>
             <div class="card-middle">
-                <h2 class="title">Al-Fatihah</h2>
-                <p class="subtitle">Pembuka</p>
+                <h2 class="title">Loading</h2>
+                <p class="subtitle">Loading</p>
             </div>
             <div class="card-right">
-                <p class="arabic">الفاتحة</p>
-                <p class="ayah-count">7 Ayat</p>
+                <p class="arabic">Loading</p>
+                <p class="ayah-count">Loading</p>
             </div>
         </div>
-
-        <div class="card" onclick="openPopup('Al-Baqarah')">
+        <!----><!--        -->
+        <div class="card">
             <div class="card-left">
                 <div class="number-container">
-                    <div class="number">2</div>
+                    <div class="number">-</div>
                 </div>
             </div>
             <div class="card-middle">
-                <h2 class="title">Al-Baqarah</h2>
-                <p class="subtitle">Sapi</p>
+                <h2 class="title">Loading</h2>
+                <p class="subtitle">Loading</p>
             </div>
             <div class="card-right">
-                <p class="arabic">البقرة</p>
-                <p class="ayah-count">286 Ayat</p>
+                <p class="arabic">Loading</p>
+                <p class="ayah-count">Loading</p>
             </div>
         </div>
-
-        <div class="card" onclick="openPopup('Al-Baqarah')">
+        <!----><!--        -->
+        <div class="card">
             <div class="card-left">
                 <div class="number-container">
-                    <div class="number">2</div>
+                    <div class="number">-</div>
                 </div>
             </div>
             <div class="card-middle">
-                <h2 class="title">Al-Baqarah</h2>
-                <p class="subtitle">Sapi</p>
+                <h2 class="title">Loading</h2>
+                <p class="subtitle">Loading</p>
             </div>
             <div class="card-right">
-                <p class="arabic">البقرة</p>
-                <p class="ayah-count">286 Ayat</p>
+                <p class="arabic">Loading</p>
+                <p class="ayah-count">Loading</p>
             </div>
         </div>
-
-        <div class="card" onclick="openPopup('Al-Baqarah')">
+        <!----><!--        -->
+        <div class="card">
             <div class="card-left">
                 <div class="number-container">
-                    <div class="number">2</div>
+                    <div class="number">-</div>
                 </div>
             </div>
             <div class="card-middle">
-                <h2 class="title">Al-Baqarah</h2>
-                <p class="subtitle">Sapi</p>
+                <h2 class="title">Loading</h2>
+                <p class="subtitle">Loading</p>
             </div>
             <div class="card-right">
-                <p class="arabic">البقرة</p>
-                <p class="ayah-count">286 Ayat</p>
+                <p class="arabic">Loading</p>
+                <p class="ayah-count">Loading</p>
             </div>
         </div>
-
-
-        
-        <div class="card" onclick="openPopup('Al-Baqarah')">
+        <!----><!--        -->
+        <div class="card">
             <div class="card-left">
                 <div class="number-container">
-                    <div class="number">2</div>
+                    <div class="number">-</div>
                 </div>
             </div>
             <div class="card-middle">
-                <h2 class="title">Al-Baqarah</h2>
-                <p class="subtitle">Sapi</p>
+                <h2 class="title">Loading</h2>
+                <p class="subtitle">Loading</p>
             </div>
             <div class="card-right">
-                <p class="arabic">البقرة</p>
-                <p class="ayah-count">286 Ayat</p>
+                <p class="arabic">Loading</p>
+                <p class="ayah-count">Loading</p>
             </div>
         </div>
-
+        <!----><!--        -->
+        <div class="card">
+            <div class="card-left">
+                <div class="number-container">
+                    <div class="number">-</div>
+                </div>
+            </div>
+            <div class="card-middle">
+                <h2 class="title">Loading</h2>
+                <p class="subtitle">Loading</p>
+            </div>
+            <div class="card-right">
+                <p class="arabic">Loading</p>
+                <p class="ayah-count">Loading</p>
+            </div>
+        </div>
+        <!---->
 
     </div>
 </div>
@@ -108,27 +123,63 @@
         <span class="close-btn" onclick="closePopup()">&times;</span>
         <h2 id="popup-title"></h2>
         <p id="popup-subtitle"></p>
-        <input type="number" name="" id="">
-        -
-        <input type="number" name="" id="">
-        <p></p>
-        <button type="submit">OK</button>
+        <form action="quiz.html" method="get">
+            <input type="hidden" name="surah" id="formSurah">
+            <input type="number" name="from" required>
+            -
+            <input type="number" name="to" required>
+            <p></p>
+            <button type="submit">OK</button>
+        </form>
     </div>
 </div>
 
 <footer>
     <div class="kiri">
-        
+
         <h2>Quiz Quran</h2>
-        <p>Quiz Quran adalah website untuk mempermudah dalam menghafal Al-Quran. Disini Hafidz Quran dapat menghafal Al-Quran melalui quiz-quiz yang diberikan. Sehingga menghafal Alquran tidak terasa jenuh. Namun justru dapat memberi kesenangan. Melalui Website ini Hafidz Quran dapat mengetes hafalan al-quran mereka kapan pun dan dimana pun.</p>
+        <p>Quiz Quran adalah website untuk mempermudah dalam menghafal Al-Quran. Disini Hafidz Quran dapat menghafal
+            Al-Quran melalui quiz-quiz yang diberikan. Sehingga menghafal Alquran tidak terasa jenuh. Namun justru dapat
+            memberi kesenangan. Melalui Website ini Hafidz Quran dapat mengetes hafalan al-quran mereka kapan pun dan
+            dimana pun.</p>
     </div>
     <div class="kanan">
         <h2>Pengembang</h2>
         <p>Sulthon Atik Ahnafi <br>Muhammad Syahrial Hipdi</p>
     </div>
-    </footer>
-    <script src="script/jquery-3.7.1.min.js"></script>
-    <script src="script/script.js"></script>
-<!-- <script src="/script/script.js"></script> -->
+</footer>
+<script src="script/jquery-3.7.1.min.js"></script>
+<script src="script/script.js"></script>
+<script>
+    $(document).ready(async function () {
+        await getListSurah();
+    });
+
+    $(document).ready(function () {
+        $("#search-button").on("click", function () {
+            const searchTerm = $("#search-input").val();
+            $(".card").each(function () {
+                const surahName = $(this).data("name");
+                if (surahName.includes(searchTerm)) {
+                    $(this).show();
+                } else {
+                    $(this).hide();
+                }
+            });
+        });
+        $("#search-input").on("keyup", function () {
+            const searchTerm = $(this).val();
+            $(".card").each(function () {
+                const surahName = $(this).data("name");
+                if (surahName.includes(searchTerm)) {
+                    $(this).show();
+                } else {
+                    $(this).hide();
+                }
+            });
+        });
+    });
+
+</script>
 </body>
 </html>
