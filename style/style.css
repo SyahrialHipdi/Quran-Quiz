@@ -23,6 +23,13 @@ body {
   border: none;
   padding: 10px 20px;
 }
+
+@media (max-width: 768px ) {
+  .nav input {
+    margin: 0 1rem;
+  }
+}
+
 /* NAV End */
 
 .container {

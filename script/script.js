@@ -1,15 +1,14 @@
 // script.js
-function openPopup(title) {
-    document.getElementById('popup-title').innerText = title;
-    document.getElementById('popup-subtitle').innerText = "Masukan range ayat yang akan dihafal";
-
-    document.getElementById('popup').style.display = 'flex';
+function openPopup(title = "", surah = 0) {
+    $('#popup-title').text(title);
+    $('#popup-subtitle').text("Masukan range ayat yang akan dihafal");
+    $('#formSurah').val(surah);
+    $('#popup').css('display', 'flex');
 }
 
 function closePopup() {
-    document.getElementById('popup').style.display = 'none';
+    $('#popup').css("display", "none");
 }
-
 
 const edition = "quran-uthmani";
 
@@ -22,11 +21,44 @@ const Endpoint = {
 async function getListSurah() {
     try {
         const response = await $.get(Endpoint.listSurah);
-        return response.data;
+        const listSurah = response.data;
+
+        $("#card-surah").html("");
+
+        listSurah.forEach((data) => {
+            const card = `
+                <div class="card" id="${data.number}" data-name="${data.englishName}">
+                    <div class="card-left">
+                        <div class="number-container">
+                            <div class="number">${data.number}</div>
+                        </div>
+                    </div>
+                    <div class="card-middle">
+                        <h2 class="title">${data.englishName}</h2>
+                        <p class="subtitle">${data.englishNameTranslation}</p>
+                    </div>
+                    <div class="card-right">
+                        <p class="arabic">${data.name}</p>
+                        <p class="ayah-count">${data.numberOfAyahs} Ayat</p>
+                    </div>
+                </div>`;
+
+            $("#card-surah").append(card);
+
+        });
+
+        $(".card").on("click", function (e) {
+            const surah = $(this).attr("id");
+            const name = $(this).attr("data-name");
+
+            openPopup(name, surah);
+        });
+
     } catch (error) {
-        alert(`error Fetching data ${error.message}`)
+        alert("server error")
     }
 }
+
 
 /*
 * surah int between 1 and 114
@@ -59,11 +91,11 @@ async function getSurah(surah = 1, from = 0, to = null) {
 }
 
 
-getSurah(1, 2, 0)
-
-function randomAyah() {
-    const math = Math.random() * 3;
-    console.log(math)
-}
-
-randomAyah()
+// getSurah(1, 2, 0)
+//
+// function randomAyah() {
+//     const math = Math.random() * 3;
+//     console.log(math)
+// }
+//
+// randomAyah()
