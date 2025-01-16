@@ -8,21 +8,21 @@ body {
 }
 
 .container {
-    display: none;
+    display: block;
     width: 500px;
     /* height: 500px; */
     background-color: blue;
     position: relative;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     padding: 20px 30px;
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 10px;
 }
 
-.container p{
+.container p {
     text-align: right;
     padding: 10px 5px;
     border: 1px solid rgba(0, 0, 0, 0.5);
@@ -37,13 +37,23 @@ body {
     color: white;
 }
 
+.warning {
+    background-color: #faca1e;
+    color: white;
+}
+
+.salah {
+    background-color: #fa3232;
+    color: white;
+}
+
 button {
     padding: 10px 20px;
 }
 
 .hidden {
-    height: 200px;
-    display: block;
+    /*height: 200px;*/
+    display: none;
 }
 
 .hidden * {

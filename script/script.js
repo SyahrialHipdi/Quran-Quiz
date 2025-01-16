@@ -1,9 +1,11 @@
 // script.js
-function openPopup(title = "", surah = 0) {
+function openPopup(title = "", surah = 0, maxAyah = 3) {
     $('#popup-title').text(title);
     $('#popup-subtitle').text("Masukan range ayat yang akan dihafal");
     $('#formSurah').val(surah);
     $('#popup').css('display', 'flex');
+    // $("#inputFrom").attr("max", maxAyah - )
+    $("#inputTo").attr("max", maxAyah);
 }
 
 function closePopup() {
@@ -18,6 +20,11 @@ const Endpoint = {
     // Juz : "http://api.alquran.cloud/v1/juz/"
 }
 
+/*
+
+ini males dokumentasi
+
+ */
 async function getListSurah() {
     try {
         const response = await $.get(Endpoint.listSurah);
@@ -27,7 +34,7 @@ async function getListSurah() {
 
         listSurah.forEach((data) => {
             const card = `
-                <div class="card" id="${data.number}" data-name="${data.englishName}">
+                <div class="card" id="${data.number}" data-name="${data.englishName}" data-max="${data.numberOfAyahs}">
                     <div class="card-left">
                         <div class="number-container">
                             <div class="number">${data.number}</div>
@@ -48,10 +55,7 @@ async function getListSurah() {
         });
 
         $(".card").on("click", function (e) {
-            const surah = $(this).attr("id");
-            const name = $(this).attr("data-name");
-
-            openPopup(name, surah);
+            openPopup($(this).attr("data-name"), $(this).attr("id"),$(this).attr("data-max"));
         });
 
     } catch (error) {
@@ -67,35 +71,30 @@ async function getListSurah() {
 */
 async function getSurah(surah = 1, from = 0, to = null) {
     try {
-        if (to <= 0) to = 1;
-
+        // Validasi surah
         if (surah < 1 || surah > 114) {
-            // Error handler
             console.error("Surah number is out of range. It should be between 1 and 114.");
             return;
         }
 
-        const response = await $.get(Endpoint.detailSurah + `${surah}?offset=${from}&limit=${to ?? ""}`);
-        console.log(Endpoint.detailSurah + `${surah}?offset=${from}&limit=${to ?? ""}`);
-        console.log(response.data);
+        // Menetapkan nilai to jika nilainya tidak valid
+        if (to == null || to < 1 || isNaN(to) || to == undefined) {
+            to = 1;
+        }
 
-        // const list = response.data.ayahs;
-        // list.forEach(function (params) {
-        //     $("body").append(`<p>${JSON.stringify(params)}</p>`);
-        // });
-        return response.data
+        from = from - 1;
+
+        // Mendapatkan data dari endpoint
+        const response = await $.get(Endpoint.detailSurah + `${surah}?offset=${from}&limit=${to ?? ""}`);
+        const detailSurah = response.data;
+        // const ayahs = detailSurah.ayahs;
+
+        localStorage.setItem("detail-surah", JSON.stringify(detailSurah));
+
+        document.location.href = "quiz.html";
+
     } catch (error) {
-        // Error handler (error.responseJSON.data)
+        // Penanganan kesalahan
         console.error("Error fetching data: ", error.responseJSON?.data || error.message);
     }
 }
-
-
-// getSurah(1, 2, 0)
-//
-// function randomAyah() {
-//     const math = Math.random() * 3;
-//     console.log(math)
-// }
-//
-// randomAyah()

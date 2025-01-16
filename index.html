@@ -123,11 +123,11 @@
         <span class="close-btn" onclick="closePopup()">&times;</span>
         <h2 id="popup-title"></h2>
         <p id="popup-subtitle"></p>
-        <form action="quiz.html" method="get">
+        <form method="get" id="formQuiz">
             <input type="hidden" name="surah" id="formSurah">
-            <input type="number" name="from" required>
+            <input type="number" name="from" required min="1" id="inputFrom">
             -
-            <input type="number" name="to" required>
+            <input type="number" name="to" required min="3" id="inputTo">
             <p></p>
             <button type="submit">OK</button>
         </form>
@@ -145,7 +145,7 @@
     </div>
     <div class="kanan">
         <h2>Pengembang</h2>
-        <p>Sulthon Atik Ahnafi <br>Muhammad Syahrial Hipdi</p>
+        <p>Atik Ahnafi Sulthon <br>Muhammad Syahrial Hipdi</p>
     </div>
 </footer>
 <script src="script/jquery-3.7.1.min.js"></script>
@@ -178,6 +178,23 @@
                 }
             });
         });
+    });
+
+    $("#formQuiz").on("submit", async function (e) {
+        e.preventDefault();
+        const urlParams = new URLSearchParams(window.location.search);
+
+        // const surah = parseInt(urlParams.get('surah'));
+        // const from = parseInt(urlParams.get('from'));
+        // const to = parseInt(urlParams.get('to'));
+
+        const surah = $("#formSurah").val()
+        const from = $("#inputFrom").val()
+        const to = $("#inputTo").val()
+
+        console.log(surah, from, to)
+
+        await getSurah(parseInt(surah), parseInt(from), parseInt(to));
     });
 
 </script>
