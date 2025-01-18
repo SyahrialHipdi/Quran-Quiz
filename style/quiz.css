@@ -37,12 +37,22 @@ body {
     color: white;
 }
 
+.warning {
+    background-color: #faca1e;
+    color: white;
+}
+
+.salah {
+    background-color: #fa3232;
+    color: white;
+}
+
 button {
     padding: 10px 20px;
 }
 
 .hidden {
-    height: 200px;
+    /*height: 200px;*/
     display: none;
 }
 

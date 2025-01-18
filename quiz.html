@@ -3,34 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Quiz</title>
     <link rel="stylesheet" href="style/quiz.css">
 </head>
 <body>
-    <div class="container">
-        
-        <h3>Pilihlah ayat yang sesuai dengan nomor berikut dari surat Al-Baqarah</h3>
-        <h1>1</h1>
-        <!-- Ganti dengan teks arab tapi masih dalam range yang dimasukan-->
-        <p class="benar">Alif Lam Mim</p>
-        <p> Dzaalikal kitabular raibafiih</p>
-        <p> Hudal lil muttaqin</p>
-        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia eligendi est ex, quas magni praesentium consectetur perspiciatis odit maxime alias. Culpa impedit perspiciatis ex aliquid.</p>
+<div class="container" id="container-quiz">
 
-        <!-- Muncul jika sudah menjawab -->
-         <button>NEXT</button>
-    </div>
+    <h3>Pilihlah ayat yang sesuai dengan nomor berikut dari surat </h3>
+    <h1>-</h1>
+    <!-- Ganti dengan teks arab tapi masih dalam range yang dimasukan-->
 
-    <!-- Muncul jika sudah menjawab semua soal -->
-    <div class="container hidden">
-        
-        <h3>Score</h3>
-        <h1>9/10</h1>
+    <input type="radio" id="jakarta" name="question1" value="Jakarta" required>
+    <label for="jakarta">Jakarta</label><br>
 
-        <button>Keluar</button>
-         <button>Coba Lagi</button>
-    </div>
-</body>
+    <input type="radio" id="bandung" name="question1" value="Bandung">
+    <label for="bandung">Bandung</label><br>
 
+    <input type="radio" id="surabaya" name="question1" value="Surabaya">
+    <label for="surabaya">Surabaya</label><br>
+
+    <input type="radio" id="medan" name="question1" value="Medan">
+    <label for="medan">Medan</label>
+
+    <!-- Muncul jika sudah menjawab -->
+    <button class="hidden">NEXT</button>
+</div>
+
+<!-- Muncul jika sudah menjawab semua soal -->
+<!--<div class="container hidden">-->
+
+<!--    <h3>Score</h3>-->
+<!--    <h1>9/10</h1>-->
+
+<!--    <button>Keluar</button>-->
+<!--    <button>Coba Lagi</button>-->
+<!--</div>-->
+<!--</body>-->
+<script src="script/jquery-3.7.1.min.js"></script>
 <script src="script/quiz.js"></script>
+<script>
+    $(document).ready(function () {
+        quiz();
+    });
+</script>
+</body>
 </html>
