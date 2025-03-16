@@ -1,5 +1,5 @@
 // script.js
-function openPopup(title = "", surah = 0, maxAyah = 3) {
+function openPopup(title = "", surah = 0, maxAyah = 4) {
     $('#popup-title').text(title);
     $('#popup-subtitle').text("Masukan range ayat yang akan dihafal");
     $('#formSurah').val(surah);
@@ -69,32 +69,35 @@ async function getListSurah() {
 * from int default 0 (ayah 1)
 * to int default null cannot < 0
 */
-async function getSurah(surah = 1, from = 0, to = null) {
+async function getSurah(surah = 1, from = 1, to = null) {
     try {
-        // Validasi surah
         if (surah < 1 || surah > 114) {
             console.error("Surah number is out of range. It should be between 1 and 114.");
             return;
         }
 
-        // Menetapkan nilai to jika nilainya tidak valid
-        if (to == null || to < 1 || isNaN(to) || to == undefined) {
-            to = 1;
+        if (!to || to < from) {
+            to = from;
         }
 
-        from = from - 1;
-
-        // Mendapatkan data dari endpoint
-        const response = await $.get(Endpoint.detailSurah + `${surah}?offset=${from}&limit=${to ?? ""}`);
+        // Fetch the entire surah
+        const response = await $.get(Endpoint.detailSurah + surah);
         const detailSurah = response.data;
-        // const ayahs = detailSurah.ayahs;
 
-        localStorage.setItem("detail-surah", JSON.stringify(detailSurah));
+        // Filter only selected ayahs
+        const filteredAyahs = detailSurah.ayahs.filter(ayah => 
+            ayah.numberInSurah >= from && ayah.numberInSurah <= to
+        );
+
+        // Store only the selected ayahs
+        localStorage.setItem("detail-surah", JSON.stringify({ 
+            ...detailSurah, 
+            ayahs: filteredAyahs 
+        }));
 
         document.location.href = "quiz.html";
 
     } catch (error) {
-        // Penanganan kesalahan
         console.error("Error fetching data: ", error.responseJSON?.data || error.message);
     }
 }

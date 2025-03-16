@@ -7,38 +7,21 @@
     <link rel="stylesheet" href="style/quiz.css">
 </head>
 <body>
+
 <div class="container" id="container-quiz">
+    <h3>Pilihlah ayat yang sesuai dengan nomor berikut dari surat</h3>
+    <h1 id="quiz-title">-</h1>
 
-    <h3>Pilihlah ayat yang sesuai dengan nomor berikut dari surat </h3>
-    <h1>-</h1>
-    <!-- Ganti dengan teks arab tapi masih dalam range yang dimasukan-->
+    <!-- Opsi Jawaban akan dimasukkan ke dalam div ini oleh JavaScript -->
+    <div id="choices-container"></div>
 
-    <input type="radio" id="jakarta" name="question1" value="Jakarta" required>
-    <label for="jakarta">Jakarta</label><br>
+    <!-- Feedback Jawaban -->
+    <p id="result" style="margin-top: 10px; font-size: 18px;"></p>
 
-    <input type="radio" id="bandung" name="question1" value="Bandung">
-    <label for="bandung">Bandung</label><br>
-
-    <input type="radio" id="surabaya" name="question1" value="Surabaya">
-    <label for="surabaya">Surabaya</label><br>
-
-    <input type="radio" id="medan" name="question1" value="Medan">
-    <label for="medan">Medan</label>
-
-    <!-- Muncul jika sudah menjawab -->
-    <button class="hidden">NEXT</button>
+    <!-- Tombol Next, hanya akan muncul setelah menjawab -->
+    <button id="nextBtn" style="display: none;">NEXT</button>
 </div>
 
-<!-- Muncul jika sudah menjawab semua soal -->
-<!--<div class="container hidden">-->
-
-<!--    <h3>Score</h3>-->
-<!--    <h1>9/10</h1>-->
-
-<!--    <button>Keluar</button>-->
-<!--    <button>Coba Lagi</button>-->
-<!--</div>-->
-<!--</body>-->
 <script src="script/jquery-3.7.1.min.js"></script>
 <script src="script/quiz.js"></script>
 <script>
